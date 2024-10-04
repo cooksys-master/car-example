@@ -16,8 +16,6 @@ public class CarResponseDto {
 	
 	private String make;
 	
-	private String model;
-	
 	private List<TireResponseDto> tires;
 
 }

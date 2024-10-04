@@ -5,6 +5,7 @@ import java.util.List;
 import com.cooksys.example.dto.CarRequestDto;
 import com.cooksys.example.dto.CarResponseDto;
 import com.cooksys.example.dto.TireRequestDto;
+import com.cooksys.example.entities.Car;
 
 public interface CarService {
 

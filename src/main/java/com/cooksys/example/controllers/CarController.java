@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cooksys.example.dto.CarRequestDto;
 import com.cooksys.example.dto.CarResponseDto;
 import com.cooksys.example.dto.TireRequestDto;
+import com.cooksys.example.entities.Car;
+import com.cooksys.example.entities.Tire;
 import com.cooksys.example.services.CarService;
 
 import lombok.RequiredArgsConstructor;
@@ -31,8 +33,13 @@ public class CarController {
 	}
 	
 	@PostMapping
-	public CarResponseDto createCar(@RequestBody CarRequestDto carRequestDto) {
-		return carService.createCar(carRequestDto);
+	public CarResponseDto createCar(@RequestBody CarRequestDto doesNotMatter) {
+		System.out.println("Make of the car: " + doesNotMatter.getMake());
+		System.out.println("Model of the car: " + doesNotMatter.getModel());
+		for (TireRequestDto whatEverIWant : doesNotMatter.getTires()) {
+			System.out.println("Tire manufacturer: " + whatEverIWant.getManufacturer());
+		}
+		return carService.createCar(doesNotMatter);
 	}
 	
 	@PatchMapping("/{id}/tire/{tireId}")
